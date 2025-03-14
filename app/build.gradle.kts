@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.appgorjetai"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.appgorjetai"
