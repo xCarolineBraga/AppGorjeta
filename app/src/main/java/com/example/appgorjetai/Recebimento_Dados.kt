@@ -8,10 +8,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 
-class MainActivity : AppCompatActivity() {
+class Recebimento_Dados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_recebimento_dados)
 
         // Valor total conta
         // número de pessoas
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         // Limpar
 
         // Recuperar as views do layout
-         // FindViewById
+        // FindViewById
         //ViewBinding
 
         val edtTotal = findViewById<TextInputEditText>(R.id.tie_total)
@@ -38,4 +38,5 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 }
