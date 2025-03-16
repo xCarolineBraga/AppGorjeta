@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 
+const val KEY_NEXT_ACTIVITY ="Next.Activity"
+
 class Recebimento_Dados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,8 @@ class Recebimento_Dados : AppCompatActivity() {
         // Recuperar as views do layout
         // FindViewById
         //ViewBinding
+
+        val inicio = intent.getStringExtra(KEY_NEXT_ACTIVITY)
 
         val edtTotal = findViewById<TextInputEditText>(R.id.tie_total)
         val edtNumPeople = findViewById<TextInputEditText>(R.id.tie_num_people)
