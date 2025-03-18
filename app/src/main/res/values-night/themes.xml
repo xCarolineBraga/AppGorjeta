@@ -3,6 +3,6 @@
     <style name="Base.Theme.AppGorjetaI" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
          <item name="colorPrimary">@color/tom_3</item>
-        <item name="android:statusBarColor">@color/novo</item>
+        <item name="android:statusBarColor">@color/tom_3</item>
     </style>
 </resources>

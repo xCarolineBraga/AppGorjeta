@@ -38,8 +38,6 @@ class Recebimento_Dados : AppCompatActivity() {
             println("ação 2" + edtNumPeople.text)
 
         }
-        btnDone.setOnClickListener {  }
-
 
     }
 
