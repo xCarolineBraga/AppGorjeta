@@ -19,31 +19,152 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Resumo"
             android:textSize="40sp"
             android:fontFamily="@font/font_3"
             android:textColor="@color/tom_3"
-            android:layout_margin="24dp"/>
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="48dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hgfhgcthgcgchgcghcghc"
-            android:textColor="@color/tom_3"
-            android:textSize="80dp"/>
+            android:text="Total conta:"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="normal"
+            android:layout_marginStart="12dp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="normal"
+            tools:text="150,99"
+            android:textColor="@color/black"
+            android:layout_marginStart="200dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+           >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Num. Pessoas :"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:layout_marginStart="12dp"/>
+
+            <TextView
+                android:id="@+id/tv_numberpeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                tools:text="2"
+                android:textColor="@color/black"
+                android:layout_marginStart="208dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Porcentagem selecionada:"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:layout_marginStart="12dp"/>
+
+            <TextView
+                android:id="@+id/tv_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                tools:text="10%"
+                android:textColor="@color/black"
+                android:layout_marginStart="120dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/tom_3"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="80dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total por pessoa:"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:layout_marginStart="210dp"/>
+
+            <TextView
+                android:id="@+id/tv_total_Of_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:maxLength="5"
+                tools:text="256.00"
+                android:textColor="@color/black"
+              android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_Refresh"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="Recalcular"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

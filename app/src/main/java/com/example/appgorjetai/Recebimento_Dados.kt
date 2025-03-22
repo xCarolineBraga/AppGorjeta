@@ -1,61 +1,81 @@
 package com.example.appgorjetai
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.appgorjetai.databinding.ActivityRecebimentoDadosBinding
-import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.snackbar.Snackbar
 
-const val KEY_NEXT_ACTIVITY ="Next.Activity"
 
 class Recebimento_Dados : AppCompatActivity() {
-    private lateinit var binding : ActivityRecebimentoDadosBinding
+    private lateinit var binding: ActivityRecebimentoDadosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecebimentoDadosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
+
+        var percentage = 0
+
         binding.rbOptionOne.setOnCheckedChangeListener { buttonView, isChecked ->
-            println("option One $isChecked")
+            if (isChecked) {
+                percentage = 10
+            }
         }
+
         binding.rbOptionTwo.setOnCheckedChangeListener { buttonView, isChecked ->
-            println("option two $isChecked")
+            if (isChecked) {
+                percentage = 15
+            }
         }
+
         binding.rbOptionThree.setOnCheckedChangeListener { buttonView, isChecked ->
-            println("option three $isChecked")
+            if (isChecked) {
+                percentage = 20
+            }
+        }
+
+        binding.btnDone.setOnClickListener {
+
+            val totalaccount = binding.tieTotal.text.toString()
+            val numPeople = binding.tieNumPeople.text.toString()
+
+            if (totalaccount == "" || numPeople == "") {
+
+                Snackbar.make(
+                    binding.tieTotal,
+                    "Preencha todos os campos.",
+                    Snackbar.LENGTH_LONG
+                ).show()
+
+            } else {
+                val totalTable = totalaccount.toFloat()
+                val nPeople = numPeople.toInt()
+
+
+                val total = totalTable / nPeople
+                val totalOfPeople = (total * percentage / 100) + total
+
+
+                val intent = Intent(this,Sumary::class.java)
+                intent.apply {
+                    putExtra("totalOfPeople",totalOfPeople)
+                    putExtra("percentage",percentage)
+                    putExtra("totalTable",totalTable)
+                    putExtra("nPeople",nPeople)
+                }
+                startActivity(intent)
+            }
         }
 
         binding.btnClean.setOnClickListener {
-            println("Carol 1" + binding.tieTotal.text)
-            println("Carol 2 " + binding.tieNumPeople.text)
+            binding.tieTotal.setText("")
+            binding.tieNumPeople.setText("")
+            binding.rbOptionOne.isChecked = false
+            binding.rbOptionTwo.isChecked = false
+            binding.rbOptionThree.isChecked = false
         }
 
-        binding.btnDone.setOnClickListener {  }
-
-
-        val inicio   = intent.getStringExtra(KEY_NEXT_ACTIVITY)
-
-
-
-
-
-
-
     }
-
 }
 
-// Valor total conta
-// número de pessoas
-// porcentagem gorjeta
-// 10% , 15% ou 20%
-// Botão p Calcular
-// Limpar
-
-// Recuperar as views do layout
-// FindViewById
-//ViewBinding
